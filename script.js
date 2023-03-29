@@ -3,10 +3,15 @@ const card2 = document.getElementById("card2");
 const openButton = document.getElementById("open");
 const nextButton = document.getElementById("next");
 
-function flipCard(card, value) {
-  card.querySelector(".front").classList.add("card-flip");
-  card.querySelector(".back").classList.add("card-flip");
-  card.querySelector(".back").textContent = value;
+function revealCard(card, content) {
+  card.textContent = content;
+  card.classList.add("revealed");
+}
+
+function resetCard(card) {
+  card.style.backgroundColor = "lightgray";
+  card.textContent = "";
+  card.classList.remove("revealed");
 }
 
 openButton.addEventListener("click", () => {
@@ -18,13 +23,11 @@ openButton.addEventListener("click", () => {
   const alphabetOrEmoji = items[Math.floor(Math.random() * items.length)];
   const number = Math.floor(Math.random() * 10);
 
-  flipCard(card1, alphabetOrEmoji);
-  flipCard(card2, number);
+  revealCard(card1, alphabetOrEmoji);
+  revealCard(card2, number);
 });
 
 nextButton.addEventListener("click", () => {
-  card1.querySelector(".front").classList.remove("card-flip");
-  card1.querySelector(".back").classList.remove("card-flip");
-  card2.querySelector(".front").classList.remove("card-flip");
-  card2.querySelector(".back").classList.remove("card-flip");
+  resetCard(card1);
+  resetCard(card2);
 });
