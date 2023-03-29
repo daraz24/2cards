@@ -24,8 +24,25 @@ body {
   border-radius: 5px;
   font-size: 36px; /* フォントサイズを大きくして絵文字を表示しやすくする */
   font-weight: bold;
+  perspective: 1000px; /* 追加: カードの3D変換の遠近感を設定 */
 }
 
 button {
   margin: 20px;
+}
+
+card-content {
+  /* 追加: カードの中身のスタイルを設定 */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  backface-visibility: hidden; /* 裏面が見えないように設定 */
+  transition: transform 0.5s; /* アニメーションの速度を設定 */
+}
+
+card-flip {
+  transform: rotateY(180deg); /* カードの回転を180度に設定 */
 }
