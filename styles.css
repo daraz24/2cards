@@ -37,11 +37,11 @@ body {
 }
 
 .card-back {
-  background-color: lightgray;
+  background-color: darkgray;
 }
 
 .card-front {
-  background-color: white;
+  background-color: lightgray;
   transform: rotateY(180deg);
 }
 
