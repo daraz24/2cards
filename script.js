@@ -4,7 +4,11 @@ const openButton = document.getElementById("open");
 
 function revealCard(card, content) {
   card.querySelector(".card-front").textContent = content;
-  card.classList.add("revealed");
+  card.classList.add("flipping");
+  setTimeout(() => {
+    card.classList.add("revealed");
+    card.classList.remove("flipping");
+  }, 500);
 }
 
 function showNewContent() {
@@ -22,10 +26,16 @@ function showNewContent() {
 
 openButton.addEventListener("click", () => {
   if (card1.classList.contains("revealed")) {
-    card1.classList.remove("revealed");
-    card2.classList.remove("revealed");
+    card1.classList.add("flipping");
+    card2.classList.add("flipping");
     setTimeout(() => {
-      showNewContent();
+      card1.classList.remove("revealed");
+      card2.classList.remove("revealed");
+      card1.classList.remove("flipping");
+      card2.classList.remove("flipping");
+      setTimeout(() => {
+        showNewContent();
+      }, 500);
     }, 500);
   } else {
     showNewContent();
