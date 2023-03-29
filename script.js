@@ -4,13 +4,12 @@ const openButton = document.getElementById("open");
 const nextButton = document.getElementById("next");
 
 function revealCard(card, content) {
-  card.textContent = content;
+  card.querySelector(".card-front").textContent = content;
   card.classList.add("revealed");
 }
 
 function resetCard(card) {
-  card.style.backgroundColor = "lightgray";
-  card.textContent = "";
+  card.querySelector(".card-front").textContent = "";
   card.classList.remove("revealed");
 }
 
