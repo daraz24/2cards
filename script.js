@@ -4,14 +4,21 @@ const openButton = document.getElementById("open");
 const nextButton = document.getElementById("next");
 
 openButton.addEventListener("click", () => {
-  const alphabet = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  const items = [
+    ...Array.from({ length: 26 }, (_, i) => String.fromCharCode(i + 65)),
+    "😺",
+    "🐶"
+  ];
+  const alphabetOrEmoji = items[Math.floor(Math.random() * items.length)];
   const number = Math.floor(Math.random() * 10);
 
-  card1.textContent = alphabet;
+  card1.textContent = alphabetOrEmoji;
   card2.textContent = number;
 });
 
 nextButton.addEventListener("click", () => {
-  card1.textContent = "＊";
-  card2.textContent = "＊";
+  card1.style.backgroundColor = "lightgray";
+  card1.textContent = "";
+  card2.style.backgroundColor = "lightgray";
+  card2.textContent = "";
 });
