@@ -12,6 +12,6 @@ openButton.addEventListener("click", () => {
 });
 
 nextButton.addEventListener("click", () => {
-  card1.textContent = "裏";
-  card2.textContent = "裏";
+  card1.textContent = "＊";
+  card2.textContent = "＊";
 });
