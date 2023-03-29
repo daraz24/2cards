@@ -22,7 +22,7 @@ body {
   align-items: center;
   margin: 0 10px;
   border-radius: 5px;
-  font-size: 24px;
+  font-size: 36px; /* フォントサイズを大きくして絵文字を表示しやすくする */
   font-weight: bold;
 }
 
