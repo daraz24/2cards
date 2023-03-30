@@ -41,4 +41,3 @@ openButton.addEventListener("click", () => {
     }, 500);
   }
 });
-
